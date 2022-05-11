@@ -21,7 +21,7 @@
 SQL запросы
 простыми
 вложенными
-"""
+""" 
 """команды SQL"""
 
 
@@ -44,18 +44,8 @@ SQL запросы
 # \d name_table подробдное инфо о таблице
 # \dt name_table инфо о таблице
 
-# select * from table_name увидеть таблицу
-# select имя поля from table_name
-# select * from table_name limit 5      limit количество 
-# select * from offset 5 limit 5        offset с какого начать не включительно
-# select * from table_name where название поля = '';            поиск
-# select * from table_name where название поля = ''  and название поля = '' ;       поиск
-# select * from table_name where название поля = ''  or название поля = '' ;       поиск
-# select * from table_name in название поля (перечисление);        поиск
 
-# 
 # \i /home/erlan/Downloads/students.sql найти и загрузить в sql
-
 # insert into name_table(перечесление имен полей кроме автодекредетируемых) values(передaем название полей)
 """Типы данных"""
 # 1. numeric types -числовой тип данных
@@ -81,3 +71,54 @@ SQL запросы
 # CHECK Constraint - значение в поле отвечает каким то условиям
 # EXCLUSION Constraint - бла бла бла
  
+
+"""
+Select
+
+# select * from table_name увидеть таблицу
+# select имя поля from table_name
+# select * from table_name limit 5      limit количество 
+# select * from offset 5 limit 5        offset с какого начать не включительно
+# select * from table_name in название поля (перечисление);        поиск
+# select field_name || field_name2 from students; --> || конкатинация строк
+        AS
+# select field_name || field_name2  as another field_name from students; --> || конкатинация строк
+        Order by --> сортирует по какому то полю, по алфовитонму порядку или возрастанию
+# select field_name from table_name order by field_name;
+# select field_name from table_name order by field_name asc; возрастание
+# select field_name from table_name order by field_name desc; убывание
+nulls last пустые поля в конце
+nulls first пустые поля вначале
+        Distinct избавит от повторяющихся элементов
+# select distinct field_name from table_name;  
+# select distinct on(field_name) field_name, field_name2 from table_name order by field_name, field_name2; 
+        Where - условие как if
+# select * from table_name where название поля = '';            поиск
+# select * from table_name where название поля = ''  and название поля = '' ;       поиск
+# select * from table_name where название поля = ''  or название поля = '' ;       поиск
+# select * from table_name where field_name > int
+# <> не равно!
+# and, or, not, in работают так же как в питоне
+# 'some' and 'some' 
+# 'some' or 'some'
+# not some
+# in ('some', 'some', 'some')
+# beetween - между, между возрастом 20 и 30 и т.д
+# select * from table_name where field_name between 20 and 30; 
+        Like - чтобы в слове было определенное что то типа буквы вначале, в конце, в середине, заканчивалось на что то и т.д
+        Ilike наоборот
+# select * from table_name where field_name like 'A%'; где % значит что есть неограниченное продолжение
+# like 'a_' значит что после а есть только 1 символ. _ означает один символ __ 2 и т.д
+        Is 
+# select * from table_name where last_name is null; 
+        Limit
+        Fetch
+        Offset
+# select * from table_name limit int
+        Group by, Having
+        aggregation functions: SUM(), AVG(), COUNT(), MIN(), MAX()
+Insert
+Update 
+Delete
+Alter Table
+"""
